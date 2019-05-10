@@ -5,7 +5,9 @@
   </button>
   <mat-menu #menu="matMenu">
     <button mat-menu-item routerLink="/">Inicio</button>
-    <button mat-menu-item routerLink="/mensaje">Mensajes</button>
+    <button mat-menu-item routerLink="/ingresar">Ingresar mensaje</button>
+    <button mat-menu-item routerLink="/listar">Listar Mensajes</button>
+    <button mat-menu-item routerLink="/combinado">Combinado</button>
   </mat-menu>
 </mat-toolbar>
 <div *ngIf="estaAutenticado then autenticado;else noautenticado"></div>
