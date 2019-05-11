@@ -11,9 +11,12 @@ import {MensajeRoutingModule} from './mensaje-routing.module';
 import { Ng2ImgMaxModule } from 'ng2-img-max';
 import { ComponenteMensajeFormComponent } from './componente-mensaje-form/componente-mensaje-form.component';
 import { ComponenteMensajeListaComponent } from './componente-mensaje-lista/componente-mensaje-lista.component';
+import { ComponenteAboutComponent } from './componente-about/componente-about.component';
+import { DetalleComponent } from './detalle/detalle.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
-  declarations: [ComponenteMensajeComponent, ComponenteMensajeFormComponent, ComponenteMensajeListaComponent],
+  declarations: [ComponenteMensajeComponent, ComponenteMensajeFormComponent, ComponenteMensajeListaComponent, ComponenteAboutComponent, DetalleComponent],
   imports: [
     CommonModule,
     AppMaterialModule,
@@ -21,7 +24,8 @@ import { ComponenteMensajeListaComponent } from './componente-mensaje-lista/comp
     BrowserModule,
     FormsModule,
     MensajeRoutingModule,
-    Ng2ImgMaxModule
+    Ng2ImgMaxModule,
+    RouterModule,
   ]
 })
 export class MensajeModule { }

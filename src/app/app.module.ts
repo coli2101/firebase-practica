@@ -14,6 +14,8 @@ import { AngularFireModule } from '@angular/fire';
 import { environment } from 'src/environments/environment';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { FormsModule } from '@angular/forms';
+import { LayoutModule } from './layout/layout.module';
+import { UsuarioModule } from './usuario/usuario.module';
 
 
 @NgModule({
@@ -28,9 +30,9 @@ import { FormsModule } from '@angular/forms';
     AngularFireAuthModule,
     BrowserAnimationsModule,
     BrowserModule,
-    AppMaterialModule,
     MensajeModule,
-    FormsModule,
+    LayoutModule,
+    UsuarioModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,5 +1,5 @@
-<mat-card class="card" >
-  <h2>Agregar Mensaje</h2>
+<mat-card class="card">
+  <h2>Editar Mensaje</h2>
   <form class="form">
     <mat-form-field class="form-field">
       <input matInput type="text" name="nombre" placeholder="Nombre" [(ngModel)]="nombre">
@@ -12,15 +12,9 @@
     <mat-form-field class="form-field">
       <input matInput type="text" name="mensaje" placeholder="Mensaje" [(ngModel)]="mensaje">
     </mat-form-field>
-
-    <p>
-      <input #file type="file" accept='image/*' (change)="preview(file.files)" />
-
-      <img [src]="imgURL" height="200" *ngIf="imgURL">
-    </p>
   </form>
 
   <button mat-raised-button color="primary" (click)="guardar()">
-    Enviar mensaje
+    Editar mensaje
   </button>
 </mat-card>

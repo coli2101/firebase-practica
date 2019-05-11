@@ -11,19 +11,30 @@ import { AngularFireAuth } from '@angular/fire/auth';
 export class AppService {
 
   mensajesRef: AngularFireList<any>;
-
+  db: AngularFireDatabase;
 
   constructor(db: AngularFireDatabase,
     private storage: AngularFireStorage,
     private authenticator: AngularFireAuth) {
     this.mensajesRef = db.list('mensajes');
+    this.db = db;
   }
+
+  crearCuente(correo:string, clave:string){
+    return this.authenticator.auth.createUserWithEmailAndPassword(correo,clave);
+  }
+
   listar() {
     return this.mensajesRef.snapshotChanges().pipe(
       map(changes =>
         changes.map(c => ({ key: c.payload.key, ...c.payload.val() })))
     );
   }
+
+  consultar(key:string){
+    return this.db.database.ref('mensajes').child(key);
+  }
+
   guardar(objeto: object) {
     this.mensajesRef.push(objeto);
   }
@@ -40,6 +51,12 @@ export class AppService {
   }
   cerrarSesion(){
     this.authenticator.auth.signOut();
+  }
+
+  recuperarClave(usuario:string){
+    this.authenticator.auth.sendPasswordResetEmail(usuario).
+    then(() => console.log("email sent"))
+    .catch((error) => console.log(error))
   }
 
 }
